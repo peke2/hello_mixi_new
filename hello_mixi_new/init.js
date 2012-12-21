@@ -8,6 +8,9 @@ mixi.auth({
     state: "touch"
 });
 
+//	「r_profile」の指定だけあれば、従来のAPIを使う度にユーザーの認可ウィンドウが開くことはない
+
+
 /*
 mixi Graph API
 People API				ユーザ自身の情報や友人の情報を取得するAPIです。サンプルアプリでは、友人の一覧を表示します。
