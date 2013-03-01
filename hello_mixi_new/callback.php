@@ -1,3 +1,7 @@
+<html>
+
+<body>
+
 <?php
 //	mixiからのコールバック受付
 echo "<pre>";
@@ -17,5 +21,13 @@ curl_close($curl);
 
 var_dump($result);
 
-
 ?>
+
+
+<script type="text/javascript" src="http://sub0000498489.hmk-temp.com/test/hello_mixi_new/api_test.js"></script>
+
+
+</body>
+
+</html>
+
