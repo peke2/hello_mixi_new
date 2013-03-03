@@ -12,5 +12,5 @@ function	getFriendList()
 	}
 }
 
-getFriendList();
+//getFriendList();
 

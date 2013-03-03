@@ -7,3 +7,5 @@
 
 home=~
 rsync -av --delete --chmod=Dg+rwx,Do+rx,Fa+rw,Fa-x --exclude-from=exclude_upload.txt -e "ssh -i $home/.ssh/peke2_common_key" hello_mixi_new peke2@211.125.90.40:/var/www/test
+
+ssh -i $home/.ssh/peke2_common_key peke2@211.125.90.40 chmod 777 /var/www/test/hello_mixi_new/logs
