@@ -1,5 +1,8 @@
 <?php
 
+//
+//	GraphAPI アクセス用トークンを取得
+//
 function	getToken($url, $consumer_key, $consumer_secret, $authorization_code, $redirect_uri)
 {
 	$fields = array(
@@ -19,6 +22,36 @@ function	getToken($url, $consumer_key, $consumer_secret, $authorization_code, $r
 	curl_close($curl);
 
 	return	$result;
+}
+
+
+//
+//	自身のプロフィールを取得
+//
+function	getProfile($access_token)
+{
+	$curl = curl_init("https://api.mixi-platform.com/2/people/@me/@self?access_token=".$access_token);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+	$json_self = curl_exec($curl);
+	curl_close($curl);
+	$self = json_decode($json_self, TRUE);
+
+	return	$self;
+}
+
+
+//
+//	フレンド情報を取得
+//
+function	getFriends($access_token)
+{
+	$curl = curl_init("https://api.mixi-platform.com/2/people/@me/@friends?access_token=".$access_token);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+	$json_friends = curl_exec($curl);
+	curl_close($curl);
+	$friends = json_decode($json_friends, TRUE);
+
+	return	$friends;
 }
 
 ?>

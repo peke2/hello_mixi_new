@@ -53,14 +53,18 @@ print_r($result);
 	$token = json_decode($json_token, /*連想配列で返す*/TRUE);
 
 	$access_token = $token['access_token'];
-	$curl = curl_init("https://api.mixi-platform.com/2/people/@me/@friends?access_token=".$access_token);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-	$json_friends = curl_exec($curl);
-	curl_close($curl);
+
+	echo "<br>";
+	echo "---- 自分の情報 ----<br>";
+
+	$self = getProfile($access_token);
+
+	var_dump($self);
+
+
 	echo "<br>";
 	echo "---- フレンド情報 ----<br>";
-
-	$friends = json_decode($json_friends, TRUE);
+	$friends = getFriends($access_token);
 
 	ob_start();
 	var_dump($friends);
