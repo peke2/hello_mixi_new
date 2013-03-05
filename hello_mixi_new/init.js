@@ -4,8 +4,8 @@ mixi.init({
 });
 
 mixi.auth({
-    scope: "mixi_apps2 r_profile",
-    state: "touch"
+    scope: "mixi_apps2 r_profile r_profile_gender",
+    state: "pc"
 });
 
 //	「r_profile」の指定だけあれば、従来のAPIを使う度にユーザーの認可ウィンドウが開くことはない

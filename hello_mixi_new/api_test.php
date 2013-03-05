@@ -45,7 +45,7 @@ function	getProfile($access_token)
 //
 function	getFriends($access_token)
 {
-	$curl = curl_init("https://api.mixi-platform.com/2/people/@me/@friends?access_token=".$access_token);
+	$curl = curl_init("https://api.mixi-platform.com/2/people/@me/@friends?fileds=@all&access_token=".$access_token);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 	$json_friends = curl_exec($curl);
 	curl_close($curl);

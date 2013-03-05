@@ -44,13 +44,12 @@ print_r($result);
 		$redirect_uri
 	);
 
-	echo "<pre>";
-	echo "---- token ----\n";
-	print_r($json_token);
-	echo "</pre>";
-
 
 	$token = json_decode($json_token, /*連想配列で返す*/TRUE);
+
+	echo "---- token ----<br>";
+	var_dump($token);
+	echo "<br>";
 
 	$access_token = $token['access_token'];
 
@@ -97,6 +96,7 @@ print_r($result);
 
 ?>
 
+<script type="text/javascript">gadgets.window.adjustHeight(1024);</script>
 
 <script type="text/javascript" src="http://sub0000498489.hmk-temp.com/test/hello_mixi_new/api_test.js"></script>
 

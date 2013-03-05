@@ -5,7 +5,7 @@
   <title>はじめてのmixiアプリ</title>
 
 </head>
-<body>
+<body bgcolor="#20e080">
 はじめてのmixiアプリ<br>
 <?php
 	echo "今は[".date("Y年m月d日 H時i分s秒")."]です<br>";
