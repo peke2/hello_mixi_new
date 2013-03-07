@@ -14,3 +14,11 @@ function	getFriendList()
 
 //getFriendList();
 
+
+//ガジェット(?)の動作確認用
+
+function	test_init()
+{
+	window.document.getElementById("replace_target").innerHTML = "呼び出し完了";
+}
+

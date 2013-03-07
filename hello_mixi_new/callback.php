@@ -1,6 +1,19 @@
 <html>
+<head>
+</head>
 
 <body>
+
+<script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/connect.js"></script>
+<script type="text/javascript">gadgets.window.adjustHeight(1024);</script>
+<script type="text/javascript" src="http://sub0000498489.hmk-temp.com/test/hello_mixi_new/api_test.js"></script>
+
+	<script type="text/javascript">
+		gadgets.util.registerOnLoadHandler(test_init);
+	</script>
+
+	<div id="replace_target">デフォルト文字列</div>
+
 
 <?php
 
@@ -95,11 +108,6 @@ print_r($result);
 */
 
 ?>
-
-<script type="text/javascript">gadgets.window.adjustHeight(1024);</script>
-
-<script type="text/javascript" src="http://sub0000498489.hmk-temp.com/test/hello_mixi_new/api_test.js"></script>
-
 
 </body>
 
