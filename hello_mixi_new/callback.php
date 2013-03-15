@@ -49,7 +49,12 @@ print_r($result);
 //	$redirect_uri       = urlencode('http://sub0000498489.hmk-temp.com/test/hello_mixi_new/callback.php');
 	$redirect_uri       = 'http://sub0000498489.hmk-temp.com/test/hello_mixi_new/callback.php';
 
-	$json_token = getToken(
+	session_start();
+	$session_info = $_SESSION['test_session'];
+	$api_test = new APITest($session_info);
+
+
+	$json_token = $api_test->getToken(
 		"https://secure.mixi-platform.com/2/token",
 		$consumer_key,
 		$consumer_secret,
@@ -57,11 +62,14 @@ print_r($result);
 		$redirect_uri
 	);
 
-
 	$token = json_decode($json_token, /*連想配列で返す*/TRUE);
 
 	echo "---- token ----<br>";
 	var_dump($token);
+	echo "<br>";
+
+	echo "---- session ----<br>";
+	var_dump($session_info);
 	echo "<br>";
 
 	$access_token = $token['access_token'];
@@ -69,14 +77,14 @@ print_r($result);
 	echo "<br>";
 	echo "---- 自分の情報 ----<br>";
 
-	$self = getProfile($access_token);
+	$self = $api_test->getProfile($access_token);
 
 	var_dump($self);
 
 
 	echo "<br>";
 	echo "---- フレンド情報 ----<br>";
-	$friends = getFriends($access_token);
+	$friends = $api_test->getFriends($access_token);
 
 	ob_start();
 	var_dump($friends);

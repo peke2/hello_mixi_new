@@ -12,11 +12,19 @@
 
 	var_dump($_GET);
 	var_dump($_POST);
+
+	echo $_POST['opensocial_owner_id'];
+	echo "<br>";
+	echo $_POST['opensocial_viewer_id'];
+	echo "<br>";
+
+	session_start();
+	$_SESSION['test_session'] = $_POST;
+
 ?>
 
-
 <script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/connect.js"></script>
-<script type="text/javascript" src="http://sub0000498489.hmk-temp.com/test/hello_mixi_new/init.js"></script>
+<script type='text/javascript' src='http://sub0000498489.hmk-temp.com/test/hello_mixi_new/init.js'></script>"
 
 </body>
 </html>
