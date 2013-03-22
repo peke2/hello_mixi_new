@@ -18,6 +18,7 @@
 <?php
 
 require_once('api_test.php');
+require_once('param.php');
 
 //	mixiからのコールバック受付
 echo "<pre>";
@@ -39,11 +40,6 @@ print_r($result);
 */
 
 
-	//	コンシューマーキーとシークレットは「Graph API」用のものを使う
-//	$consumer_key       = '45846b9b6a5240bf5db4';
-//	$consumer_secret    = '2d8da20998d988b266fdfca930a9b847cca168b7';
-	$consumer_key       = 'mixiapp-web_39447';
-	$consumer_secret    = '44c89864e55cdc512c3ac197f04efe842233e69b';
 	$authorization_code = $_GET['code'];
 	//	URLエンコードは不要
 //	$redirect_uri       = urlencode('http://sub0000498489.hmk-temp.com/test/hello_mixi_new/callback.php');
@@ -63,11 +59,11 @@ print_r($result);
 	);
 
 	$token = json_decode($json_token, /*連想配列で返す*/TRUE);
-
+/*
 	echo "---- token ----<br>";
 	var_dump($token);
 	echo "<br>";
-
+*/
 	echo "---- session ----<br>";
 	var_dump($session_info);
 	echo "<br>";
