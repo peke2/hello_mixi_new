@@ -4,8 +4,7 @@ mixi.init({
 });
 
 mixi.auth({
-    scope: "mixi_apps2 r_profile r_profile_gender",
-    state: "pc"
+    scope: "mixi_apps2 r_profile r_profile_blood_type r_profile_birthday r_profile_gender",
 });
 
 //	「r_profile」の指定だけあれば、従来のAPIを使う度にユーザーの認可ウィンドウが開くことはない
