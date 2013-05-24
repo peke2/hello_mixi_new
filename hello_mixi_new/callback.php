@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 
 <body>

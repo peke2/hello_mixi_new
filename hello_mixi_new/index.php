@@ -18,8 +18,33 @@
 	echo $_POST['opensocial_viewer_id'];
 	echo "<br>";
 
-	session_start();
-	$_SESSION['test_session'] = $_POST;
+
+	require_once('oauth_test.php');
+	$oauth = new OAuthTest();
+	$is_signature_valid = $oauth->certifiesSginature( array_merge($_GET, $_POST) );
+
+	if( $is_signature_valid == true )
+	{
+		session_start();
+		$_SESSION['test_session'] = $_POST;
+	}
+	else
+	{
+		session_start();
+		$_SESSION = array();
+
+		if( ini_get("session.use_cookies") )
+		{
+			$params = session_get_cookie_params();
+			setcookie(session_name(), '', time() - 42000,
+				$params["path"], $params["domain"],
+				$params["secure"], $params["httponly"]
+			);
+		}
+
+		session_destroy();
+		echo "[署名の確認に失敗]<br>";
+	}
 
 ?>
 
